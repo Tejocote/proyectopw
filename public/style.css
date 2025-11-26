@@ -34,7 +34,7 @@ form{
   border-radius:6px;
   max-width:480px;
 }
-input[type="text"], input[type="email"]{
+input{
   width:100%;
   padding:8px;
   margin:6px 0 12px;

@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRUD Usuarios</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <section>
+        <!-- navegacion -->
+        <nav style="text-align:right; margin-bottom:20px;">
+            <% if(loggedIn) { %>
+                <span>Bienvenido, <%= userName %></span> | 
+                <a href="/logout">Cerrar sesión</a>
+            <% } else { %>
+                <a href="/login">Iniciar sesión</a> | 
+                <a href="/register">Registrarse</a>
+            <% } %>
+        </nav>
 
         <h1>Lista de usuarios</h1>
         <table>
@@ -29,15 +39,17 @@
             </tr>
             <% }); %>
         </table>
-        <!-- agregar usuario -->
-         <form action="/add" method="post">
-                <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                <br>
-                <label for="email">Correo</label>
-                    <input type="email" name="email" id="email" required>
-                <button type="submit">Agregar</button> 
-         </form>
+
+<!-- agregar usuario -->
+        <h2>Agregar usuario</h2>
+        <form action="/add" method="post">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Correo:</label>
+            <input type="email" name="email" id="email" required>
+            <button type="submit">Agregar</button> 
+        </form>
     </section>
 </body>
 </html>
